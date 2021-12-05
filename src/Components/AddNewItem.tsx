@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import { NewFormItem } from "./NewFormItem";
-import { AddItemButton } from './Styles'
-
+import { AddItemButton } from '../Styles'
 interface AddItemProps{
     onAdd(text: string):void
     toggleButtonText: string
@@ -12,7 +11,9 @@ export const AddNewItem =(props: AddItemProps)=>{
     const [showForm, setShowForm] = useState(false)
     const { onAdd, toggleButtonText, dark} = props
 
-    if(showForm){
+        
+       if(showForm){
+        
         return(
             <NewFormItem
                 onAdd={ text =>{
