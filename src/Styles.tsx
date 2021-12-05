@@ -86,5 +86,5 @@ export const NewItemInput = styled.input`
     border: none;
     margin-bottom: .5rem;
     padding: .5rem 1rem;
-    width: 100%;
+    width: 89%;
 `
