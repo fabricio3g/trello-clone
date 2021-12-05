@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {ColumnContainer, ColumnTitle} from './Styles'
+import {ColumnContainer, ColumnTitle} from '../Styles'
 
 interface ColumnProps{
     text: string
