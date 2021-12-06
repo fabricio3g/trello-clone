@@ -11,9 +11,17 @@ export const NewFormItem =(props:NewItemFormProps)=>{
     const [text, setText] = useState("")
     const { onAdd } = props
     const inputRef = useFocus()
+    
+    const handleAddText = (e: React.KeyboardEvent<HTMLInputElement>) =>{
+        if(e.key === "Enter"){
+            onAdd(text)
+        }
+    }
+
     return(
         <NewItemFormContainer>
             <NewItemInput 
+                onKeyPress={handleAddText}
                 value={text}
                 ref={inputRef} 
                 onChange={e => setText(e.target.value)}
