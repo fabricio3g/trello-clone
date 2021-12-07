@@ -1,30 +1,26 @@
-import React, {Component} from "react";
+import React from "react";
 import {AppContainer} from '../Styles'
-
 import { Column } from "./Column";
-import { Card } from "./Card";
 import { AddNewItem } from "./AddNewItem";
 
+import { useAppState } from '../state/AppStateContext'
 
 
-class Main extends Component{
+const Main = ()=> {
 
+    const { lists } = useAppState();
     
-    render(){
         return(
             <AppContainer>
-                <Column text="Todos">
-                    <Card text="Walk the dog"/>
-                </Column>
-                <Column text="Todos">
-                    <Card text="Walk the dog"/>
-                 <AddNewItem toggleButtonText="+ Add Another list" dark onAdd={console.log}/>     
-                </Column>
+                {
+                    lists.map(list => (
+                        <Column text={list.text} id={list.id} />
+                    ))
+                }
                 
                 <AddNewItem toggleButtonText="+ Add Another list" onAdd={console.log}/>
             </AppContainer>
         )
-    }
 }
 
 
