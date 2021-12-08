@@ -13,6 +13,20 @@ const appData: AppState = {
                 {
                     id: "001",
                     text: "generator thing"
+                },
+{
+                    id: "001",
+                    text: "new"
+                }
+            ]
+        },
+{
+            id: "2",
+            text: 'Todo',
+            tasks: [
+                {
+                    id: "02",  
+                    text: "generator thing"
                 }
             ]
         }

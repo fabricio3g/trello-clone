@@ -6,7 +6,7 @@ interface CardProps{
     id:string
 }
 
-export const Card = ({text}: CardProps )=>{
+export const Card = ({text, id}: CardProps )=>{
 
-    return <CardContainer>{text}</CardContainer>
+    return <CardContainer key={id} id={id} >{text}</CardContainer>
 }
