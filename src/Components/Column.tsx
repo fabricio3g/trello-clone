@@ -21,7 +21,8 @@ export const Column =({text, id}: PropsWithChildren<ColumnProps>)=>{
     const { getTasksById, dispatch } = useAppState()
 
     const tasks = getTasksById(id)
-    console.log(tasks)
+    
+
     return(
         <ColumnContainer>
             <ColumnTitle>{text}</ColumnTitle>
