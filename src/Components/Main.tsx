@@ -2,13 +2,13 @@ import React from "react";
 import {AppContainer} from '../Styles'
 import { Column } from "./Column";
 import { AddNewItem } from "./AddNewItem";
-
+import { addList } from '../state/actions'
 import { useAppState } from '../state/AppStateContext'
 
 
 const Main = ()=> {
 
-    const { lists } = useAppState();
+    const { lists, dispatch } = useAppState();
     
         return(
             <AppContainer>
@@ -18,7 +18,7 @@ const Main = ()=> {
                     ))
                 }
                 
-                <AddNewItem toggleButtonText="+ Add Another list" onAdd={console.log}/>
+                <AddNewItem toggleButtonText="+ Add Another list" onAdd={text => dispatch(addList(text))}/>
             </AppContainer>
         )
 }
