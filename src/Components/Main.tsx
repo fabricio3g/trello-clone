@@ -14,7 +14,7 @@ const Main = ()=> {
             <AppContainer>
                 {
                     lists.map(list => (
-                        <Column text={list.text} id={list.id} />
+                        <Column text={list.text} key={list.id} id={list.id} />
                     ))
                 }
                 
