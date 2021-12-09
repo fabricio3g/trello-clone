@@ -11,4 +11,15 @@ export type Action =
         }
     }
 
-export const addTask = ( text: string, listId: string ):Action =>
+export const addTask = ( text: string, id: string ):Action => ({
+    type: "ADD_TASK",
+    payload:{
+        text,
+        id 
+    }
+})
+
+export const addList = (text:string): Action => ({
+    type: "ADD_LIST",
+    payload:text
+})
