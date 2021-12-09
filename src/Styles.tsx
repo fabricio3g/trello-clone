@@ -8,9 +8,10 @@ export const AppContainer = styled.div`
     background: #3179ba;
     display: flex;
     flex-direction: row;
-    height: 100%;
     padding: 20px;
     width: 100%;
+    height: 100%;
+    overflow: auto;
 `
 
 
@@ -22,6 +23,7 @@ export const ColumnContainer = styled.div`
     border-radius: 3px;
     padding: 8px 8px;
     flex-grow: 0;
+    display: inline-block;
 `
 
 export const ColumnTitle = styled.div`
@@ -34,7 +36,7 @@ export const CardContainer = styled.div`
     cursor: pointer;
     margin-bottom: .5rem;
     padding: .5rem 1rem;
-    max-width: 300px;
+    max-width: 500px;
     border-radius: 3px;
     box-shadow: #091e4240 0px 1px 0px 0px;
 
