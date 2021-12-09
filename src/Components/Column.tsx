@@ -4,6 +4,7 @@ import {ColumnContainer, ColumnTitle} from '../Styles'
 import { AddNewItem } from './AddNewItem'
 
 import { useAppState } from '../state/AppStateContext'
+import { addTask } from '../state/actions'
 
 interface ColumnProps{
     text: string
@@ -17,10 +18,10 @@ type PropsWithChildren<P> = P & {
 
 export const Column =({text, id}: PropsWithChildren<ColumnProps>)=>{
 
-    const { getTasksById } = useAppState()
+    const { getTasksById, dispatch } = useAppState()
 
     const tasks = getTasksById(id)
-
+    console.log(tasks)
     return(
         <ColumnContainer>
             <ColumnTitle>{text}</ColumnTitle>
@@ -31,7 +32,7 @@ export const Column =({text, id}: PropsWithChildren<ColumnProps>)=>{
             }
             <AddNewItem
                 toggleButtonText="+ Add another task"
-                onAdd={console.log}
+                onAdd={text => dispatch(addTask(text, id))}
                 dark
             />
         </ColumnContainer>
