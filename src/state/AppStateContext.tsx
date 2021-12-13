@@ -36,9 +36,12 @@ export const AppStateProvider:FC = ({children})=>{
 
     const [state, dispatch] = useImmerReducer(appStateReducer, appData)
     const { lists } = state
-    const getTasksById = ( id:string ) =>{
-        return appData.lists.find((lists) => lists.id === id)?.tasks || [];
+    
+    const getTasksById = (id: string) => {
+        return lists.find((list) => list.id === id)?.tasks || []
     }
+
+    getTasksById("CynK0BfuRhMtNhU_WEaTX")
 
     return(
         <AppStateContext.Provider value={{ lists, getTasksById, dispatch}}>
