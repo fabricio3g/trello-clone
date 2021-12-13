@@ -22,7 +22,7 @@ export const Column =({text, id}: PropsWithChildren<ColumnProps>)=>{
 
     const tasks = getTasksById(id)
     
-
+    console.log(id)
     return(
         <ColumnContainer>
             <ColumnTitle>{text}</ColumnTitle>
