@@ -33,14 +33,12 @@ export const appStateReducer =(draft: AppState, action: Action):AppState | void=
             ) 
             break
         case "ADD_TASK":
-            const {text, id} = action.payload
+            const { text, id } = action.payload
             const targetListIndex = findItemIndexById(draft.lists, id)
-            draft.lists[targetListIndex].tasks.push(
-                {   
-                    id: nanoid(),
-                    text
-                }
-            )
+            draft.lists[targetListIndex].tasks.push({
+                id: nanoid(),
+                text
+            })  
             break
         default:
             break
